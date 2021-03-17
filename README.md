@@ -34,11 +34,13 @@ task_matching_systemは以下の機能を実装しています。
 
 サイトマップ
 
-![サイトマップ](https://gyazo.com/0fde92fd2cb8738316aed0a7a1be1709)
+![サイトマップ](https://user-images.githubusercontent.com/77527527/111414172-d9f0b200-8722-11eb-8b93-36d933645d0d.png)
+
 
 
 データベース図
-![データベース図](https://gyazo.com/d65403553f0c5a48994e677a6fee8fda)
+![データベース図](https://user-images.githubusercontent.com/77527527/111414214-ec6aeb80-8722-11eb-8f6d-8f1d2e87bbae.png)
+
 
 
 
