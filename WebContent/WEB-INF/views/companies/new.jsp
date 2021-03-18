@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <h2>新規企業登録ページ</h2>
-        <p>*企業名、企業Emailアドレス、パスワードは必須入力項目です*</p>
+        <p class=form_alerm>*企業名、企業Emailアドレス、パスワードは必須入力項目です*</p>
 
         <form method="POST" enctype="multipart/form-data" action="<c:url value='/companies/create' />" >
             <c:import url="company_form.jsp" />

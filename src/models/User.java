@@ -49,7 +49,7 @@ public class User {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="birthday")
+    @Column(name="birthday", nullable = true)
     private Date birthday;
 
     @Column(name = "password", length = 64, nullable = false)
@@ -78,16 +78,16 @@ public class User {
 
     @Column(name="image")
     private String image;
+
     @LazyCollection(LazyCollectionOption.FALSE)
-    // 自分がコメントした会社リスト
+
     @ManyToMany
     @JoinTable(name="comments",joinColumns=@JoinColumn(name="user_id"),
                                inverseJoinColumns=@JoinColumn(name="company_id"))
     private List<Company> comment_Company;
 
-//  @ManyToMany(fetch = FetchType.EAGER)
-//  @JoinTable(name = "favorites", joinColumns = @JoinColumn(name = "employee_id"), inverseJoinColumns = @JoinColumn(name = "report_id"))
-//  List<Report> favotiteReports;
+    @ManyToMany(mappedBy="favorite_User")
+    private List<Company> favorite_Company_C;
 
 
     public Integer getId() {

@@ -1,8 +1,9 @@
 package reports;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 
-import javax.servlet.RequestDispatcher;
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Report;
+import utils.DBUtil;
 
 /**
  * Servlet implementation class ReportsDestroyServlet
@@ -29,13 +31,20 @@ public class ReportsDestroyServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("_token", request.getSession().getId());
-        request.setAttribute("report", new Report());
+            EntityManager em = DBUtil.createEntityManager();
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
-        rd.forward(request, response);
+            Report r = em.find(Report.class, Integer.parseInt(request.getParameter("report_id")));
+            r.setDelete_flag(1);
+            r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+
+            em.getTransaction().begin();
+            em.getTransaction().commit();
+            em.close();
+            request.getSession().setAttribute("flush", "削除が完了しました。");
+
+            response.sendRedirect(request.getContextPath() + "/reports/self_index");
 
     }
 

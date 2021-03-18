@@ -39,10 +39,6 @@ public class UsersUpdateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String _token = (String)request.getParameter("_token");
-        int user_id=(Integer)(request.getSession().getAttribute("user_id"));
-
-        if(_token != null && _token.equals(request.getSession().getId())){
 
             EntityManager em=DBUtil.createEntityManager();
 
@@ -90,7 +86,7 @@ public class UsersUpdateServlet extends HttpServlet {
                 u.setImage(image);
             }
 
-            List<String> errors = UsersValidator.validate(u,true,passwordCheckFlag);
+            List<String> errors = UsersValidator.validate(u,passwordCheckFlag);
             if(errors.size() > 0) {
                 em.close();
 
@@ -106,13 +102,10 @@ public class UsersUpdateServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
-            request.setAttribute("id",user_id);
-            RequestDispatcher rd = request.getRequestDispatcher("/reports/index");
-            rd.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/reports/index");
 
             }
 
-        }
     }
 
     private String getFileName(Part part) {

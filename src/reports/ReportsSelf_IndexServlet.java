@@ -1,4 +1,4 @@
-package companies;
+package reports;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,21 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Company;
+import models.Report;
 import models.User;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class CompaniesIndexServlet
+ * Servlet implementation class ReportsSelf_IndexServlet
  */
-@WebServlet("/companies/index")
-public class CompaniesIndexServlet extends HttpServlet {
+@WebServlet(name = "reports/self_index", urlPatterns = { "/reports/self_index" })
+public class ReportsSelf_IndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CompaniesIndexServlet() {
+    public ReportsSelf_IndexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,56 +36,35 @@ public class CompaniesIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         EntityManager em = DBUtil.createEntityManager();
+        User login_user = (User)request.getSession().getAttribute("login_user");
 
         int page = 1;
         try{
             page = Integer.parseInt(request.getParameter("page"));
         } catch(NumberFormatException e) { }
-        List<Company> companies = em.createNamedQuery("getAllCompanies", Company.class)
+        List<Report> reports = em.createNamedQuery("getSelfReports", Report.class)
+                                     .setParameter("user",login_user)
                                      .setFirstResult(15 * (page - 1))
                                      .setMaxResults(15)
                                      .getResultList();
 
-        long companies_count = (long)em.createNamedQuery("getCompaniesCount", Long.class)
+        long reports_count = (long)em.createNamedQuery("getSelfCounts", Long.class)
+                                       .setParameter("user",login_user)
                                        .getSingleResult();
 
-        if(request.getSession().getAttribute("login_user") != null){
-
-            User login_user = (User)request.getSession().getAttribute("login_user");
-            long favorites_count=(long)em.createNamedQuery("getFavoriteCounts_C",Long.class)
-                    .setParameter("user",login_user)
-                    .getSingleResult();
-
-            if(favorites_count==0){
-            em.close();
-            }
-
-            if(favorites_count>0){
-
-            List<Company> favorited_companies =em.createNamedQuery("getFavoritedCompanies",Company.class)
-                                .setParameter("user",login_user)
-                                .getResultList();
 
 
-            em.close();
-            request.setAttribute("favorited_companies",favorited_companies);
-
-            }
-
-        }
-
-        request.setAttribute("companies", companies);
-        request.setAttribute("companies_count", companies_count);
+        request.setAttribute("reports", reports);
+        request.setAttribute("reports_count", reports_count);
         request.setAttribute("page", page);
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/companies/index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/self_index.jsp");
         rd.forward(request, response);
 
     }
-
 
 }

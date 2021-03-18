@@ -8,7 +8,7 @@
             </div>
         </c:if>
 
-        <h2>企業一覧</h2>
+        <h2>検索企業一覧</h2>
         <table id="employee_list">
             <tbody>
                 <tr>

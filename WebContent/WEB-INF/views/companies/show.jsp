@@ -25,7 +25,7 @@
                       </tr>
                       <tr>
                         <th>所在地</th>
-                        <td><c:out value="${company.place_prefecture} + ${company.place_address}" /></td>
+                        <td><c:out value="${company.place_prefecture}  ${company.place_address}" /></td>
                       </tr>
                       <tr>
                         <th>サービスの予算</th>
@@ -70,27 +70,30 @@
                     </c:if>
                 <br/><br/>
 
-                <c:if test="${sessionScope.login_company.id == company.id}">
-                    <p><a href="<c:url value="/companies/edit?id=${company.id}" />">企業情報を編集する</a></p>
-                </c:if>
+                <div class="campany_command">
+                    <c:if test="${sessionScope.login_company.id == company.id}">
+                        <p><a href="<c:url value="/companies/edit?id=${company.id}" />">企業情報を編集</a></p>
+                    </c:if>
 
-                <br/>
+                    <br/>
 
-                <c:if test="${sessionScope.login_user != null}">
-                    <form method="POST" action="<c:url value="/companies/comment"/>">
-                        <label for="content">この企業にコメントする</label><br/>
-                        <textarea name="content" rows="10" cols="50">${comment.content}</textarea><br/><br/>
+                    <c:if test="${sessionScope.login_user != null}">
+                      <div class="company_comment">
+                        <form method="POST" action="<c:url value="/companies/comment"/>">
+                            <textarea name="content" rows="10" cols="50">${comment.content}</textarea><br/><br/>
 
-                        <input type="hidden" name="company_id" value="${company.id}" />
-                        <button type="submit">コメントする</button>
-                    </form>
-                <br/><br/>
+                            <input type="hidden" name="company_id" value="${company.id}" />
+                            <button class="button" type="submit">企業へコメントする</button>
+                        </form>
+                    <br/><br/>
 
-                <form method="POST" action="<c:url value="/companies/comment_index"/>">
-                    <input type="hidden" name="company_id" value="${company.id}" />
-                    <button type="submit">この企業のコメント一覧へ</button>
-                </form>
-                </c:if>
+                        <form method="POST" action="<c:url value="/companies/comment_index"/>">
+                            <input type="hidden" name="company_id" value="${company.id}" />
+                            <button class="button" type="submit">この企業のコメント一覧へ</button>
+                        </form>
+                      </div>
+                    </c:if>
+                </div>
 
             </c:when>
             <c:otherwise>

@@ -1,4 +1,4 @@
-package reports;
+package companies;
 
 import java.io.IOException;
 
@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Company;
-import models.Favorite_R;
-import models.Report;
+import models.Favorite_C;
+import models.User;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class ReportsFavorite_DestroyServlet
+ * Servlet implementation class CompaniesFavorite_DestroyServlet
  */
-@WebServlet(name = "reports/favorite_destroy", urlPatterns = { "/reports/favorite_destroy" })
-public class ReportsFavorite_DestroyServlet extends HttpServlet {
+@WebServlet(name = "companies/favorite_destroy", urlPatterns = { "/companies/favorite_destroy" })
+public class CompaniesFavorite_DestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReportsFavorite_DestroyServlet() {
+    public CompaniesFavorite_DestroyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,23 +34,24 @@ public class ReportsFavorite_DestroyServlet extends HttpServlet {
 
         EntityManager em=DBUtil.createEntityManager();
 
-        Company login_company = (Company)request.getSession().getAttribute("login_company");
-        Report report=em.find(Report.class,Integer.parseInt(request.getParameter("report_id")));
+        User login_user = (User)request.getSession().getAttribute("login_user");
+        Company company=em.find(Company.class,Integer.parseInt(request.getParameter("company_id")));
 
 
-        Integer favorite_id=em.createNamedQuery("getFavoriteId",Integer.class)
-                               .setParameter("report",report)
-                               .setParameter("company",login_company)
+        Integer favorite_id=em.createNamedQuery("getFavoriteId_C",Integer.class)
+                               .setParameter("company",company)
+                               .setParameter("user",login_user)
                                .getSingleResult();
 
-        Favorite_R f =em.find(Favorite_R.class,favorite_id);
+        Favorite_C f =em.find(Favorite_C.class,favorite_id);
 
         em.getTransaction().begin();
         em.remove(f);
         em.getTransaction().commit();
         em.close();
 
-        response.sendRedirect(request.getContextPath()+"/reports/index");
+        response.sendRedirect(request.getContextPath()+"/companies/index");
+
     }
 
 }

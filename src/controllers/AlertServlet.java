@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TopPageServlet
+ * Servlet implementation class AlertServlet
  */
-@WebServlet(name = "/TopPage.html", urlPatterns = { "/login" })
-public class TopPageServlet extends HttpServlet {
+@WebServlet(name = "alert", urlPatterns = { "/alert" })
+public class AlertServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TopPageServlet() {
+    public AlertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,8 +29,11 @@ public class TopPageServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/toppage/toppage.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/toppage/alert.jsp");
         rd.forward(request, response);
+
     }
+
+
 
 }

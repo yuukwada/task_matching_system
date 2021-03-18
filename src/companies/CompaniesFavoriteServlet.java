@@ -1,66 +1,56 @@
 package companies;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Comment;
 import models.Company;
+import models.Favorite_C;
 import models.User;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class CompaniesCommentServlet
+ * Servlet implementation class CompaniesFavoriteServlet
  */
-@WebServlet(name = "companies/comment", urlPatterns = { "/companies/comment" })
-public class CompaniesCommentServlet extends HttpServlet {
+@WebServlet(name = "companies/favorite", urlPatterns = { "/companies/favorite" })
+public class CompaniesFavoriteServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CompaniesCommentServlet() {
+    public CompaniesFavoriteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         EntityManager em = DBUtil.createEntityManager();
 
         User login_user = (User)request.getSession().getAttribute("login_user");
-        int company_id=Integer.parseInt(request.getParameter("company_id"));
         Company company=em.find(Company.class,Integer.parseInt(request.getParameter("company_id")));
 
 
 
-        Comment c = new Comment();
-        c.setUser(login_user);
-        c.setCompany(company);
-        c.setContent(request.getParameter("content"));
-        c.setDelete_flag(0);
-
-        Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-        c.setCreated_at(currentTime);
-        c.setUpdated_at(currentTime);
+        Favorite_C f = new Favorite_C();
+        f.setUser(login_user);
+        f.setCompany(company);
 
         em.getTransaction().begin();
-        em.persist(c);
+        em.persist(f);
         em.getTransaction().commit();
 
         em.close();
 
-        request.setAttribute("company_id",company_id);
-        RequestDispatcher rd = request.getRequestDispatcher("/companies/comment_index");
-        rd.forward(request, response);
 
+        response.sendRedirect(request.getContextPath()+"/companies/index");
 
 
     }

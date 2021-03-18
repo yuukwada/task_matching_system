@@ -5,6 +5,8 @@
         <c:choose>
             <c:when test="${company != null}">
                 <h2>企業情報編集ページ</h2>
+                <p class=form_alerm>*企業名、企業Emailアドレス、パスワードは必須入力項目です*</p>
+
                 <form method="POST" enctype="multipart/form-data" action="<c:url value='/companies/update' />">
                     <c:import url="company_form.jsp" />
                 </form>

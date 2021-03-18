@@ -9,7 +9,7 @@
         </c:if>
 
 
-        <h2>お悩み一覧</h2>
+        <h2>検索お悩み一覧</h2>
         <table id="report_list">
             <tbody>
                 <tr>

@@ -13,59 +13,59 @@
 </c:if>
 
 <label for="name">企業名</label><br />
-<input type="text" name="name" value="${company.name}" />
+<input required type="text" name="name" value="${company.name}" />
 <br /><br />
 
 <label for="place_prefecture">所在地(都道府県)</label><br />
  <select name="place_prefecture">
-    <option value="未登録" >"選択してください"</option>
-        <option value="北海道">北海道</option>
-        <option value="青森県">青森県</option>
-        <option value="岩手県">岩手県</option>
-        <option value="宮城県">宮城県</option>
-        <option value="秋田県">秋田県</option>
-        <option value="山形県">山形県</option>
-        <option value="福島県">福島県</option>
-        <option value="茨城県">茨城県</option>
-        <option value="栃木県">栃木県</option>
-        <option value="群馬県">群馬県</option>
-        <option value="埼玉県">埼玉県</option>
-        <option value="千葉県">千葉県</option>
-        <option value="東京都">東京都</option>
-        <option value="神奈川県">神奈川県</option>
-        <option value="新潟県">新潟県</option>
-        <option value="富山県">富山県</option>
-        <option value="石川県">石川県</option>
-        <option value="福井県">福井県</option>
-        <option value="山梨県">山梨県</option>
-        <option value="長野県">長野県</option>
-        <option value="岐阜県">岐阜県</option>
-        <option value="静岡県">静岡県</option>
-        <option value="愛知県">愛知県</option>
-        <option value="三重県">三重県</option>
-        <option value="滋賀県">滋賀県</option>
-        <option value="京都府">京都府</option>
-        <option value="大阪府">大阪府</option>
-        <option value="兵庫県">兵庫県</option>
-        <option value="奈良県">奈良県</option>
-        <option value="和歌山県">和歌山県</option>
-        <option value="鳥取県">鳥取県</option>
-        <option value="島根県">島根県</option>
-        <option value="岡山県">岡山県</option>
-        <option value="広島県">広島県</option>
-        <option value="山口県">山口県</option>
-        <option value="徳島県">徳島県</option>
-        <option value="香川県">香川県</option>
-        <option value="愛媛県">愛媛県</option>
-        <option value="高知県">高知県</option>
-        <option value="福岡県">福岡県</option>
-        <option value="佐賀県">佐賀県</option>
-        <option value="長崎県">長崎県</option>
-        <option value="熊本県">熊本県</option>
-        <option value="大分県">大分県</option>
-        <option value="宮崎県">宮崎県</option>
-        <option value="鹿児島県">鹿児島県</option>
-        <option value="沖縄県">沖縄県</option>
+    <option value="" >"選択してください"</option>
+        <option value="北海道"<c:if test="${company.place_prefecture == '北海道'}"> selected</c:if>>北海道</option>
+        <option value="青森県"<c:if test="${company.place_prefecture == '青森県'}"> selected</c:if>>青森県</option>
+        <option value="岩手県"<c:if test="${company.place_prefecture == '岩手県'}"> selected</c:if>>岩手県</option>
+        <option value="宮城県"<c:if test="${company.place_prefecture == '宮城県'}"> selected</c:if>>宮城県</option>
+        <option value="秋田県"<c:if test="${company.place_prefecture == '秋田県'}"> selected</c:if>>秋田県</option>
+        <option value="山形県"<c:if test="${company.place_prefecture == '山形県'}"> selected</c:if>>山形県</option>
+        <option value="福島県"<c:if test="${company.place_prefecture == '福島県'}"> selected</c:if>>福島県</option>
+        <option value="茨城県"<c:if test="${company.place_prefecture == '茨城県'}"> selected</c:if>>茨城県</option>
+        <option value="栃木県"<c:if test="${company.place_prefecture == '栃木県'}"> selected</c:if>>栃木県</option>
+        <option value="群馬県"<c:if test="${company.place_prefecture == '群馬県'}"> selected</c:if>>群馬県</option>
+        <option value="埼玉県"<c:if test="${company.place_prefecture == '埼玉県'}"> selected</c:if>>埼玉県</option>
+        <option value="千葉県"<c:if test="${company.place_prefecture == '千葉県'}"> selected</c:if>>千葉県</option>
+        <option value="東京都"<c:if test="${company.place_prefecture == '東京都'}"> selected</c:if>>東京都</option>
+        <option value="神奈川県"<c:if test="${company.place_prefecture == '神奈川県'}"> selected</c:if>>神奈川県</option>
+        <option value="新潟県"<c:if test="${company.place_prefecture == '新潟県'}"> selected</c:if>>新潟県</option>
+        <option value="富山県"<c:if test="${company.place_prefecture == '富山県'}"> selected</c:if>>富山県</option>
+        <option value="石川県"<c:if test="${company.place_prefecture == '石川県'}"> selected</c:if>>石川県</option>
+        <option value="福井県"<c:if test="${company.place_prefecture == '福井県'}"> selected</c:if>>福井県</option>
+        <option value="山梨県"<c:if test="${company.place_prefecture == '山梨県'}"> selected</c:if>>山梨県</option>
+        <option value="長野県"<c:if test="${company.place_prefecture == '長野県'}"> selected</c:if>>長野県</option>
+        <option value="岐阜県"<c:if test="${company.place_prefecture == '岐阜県'}"> selected</c:if>>岐阜県</option>
+        <option value="静岡県"<c:if test="${company.place_prefecture == '静岡家'}"> selected</c:if>>静岡県</option>
+        <option value="愛知県"<c:if test="${company.place_prefecture == '愛知県'}"> selected</c:if>>愛知県</option>
+        <option value="三重県"<c:if test="${company.place_prefecture == '三重県'}"> selected</c:if>>三重県</option>
+        <option value="滋賀県"<c:if test="${company.place_prefecture == '滋賀県'}"> selected</c:if>>滋賀県</option>
+        <option value="京都府"<c:if test="${company.place_prefecture == '京都府'}"> selected</c:if>>京都府</option>
+        <option value="大阪府"<c:if test="${company.place_prefecture == '大阪府'}"> selected</c:if>>大阪府</option>
+        <option value="兵庫県"<c:if test="${company.place_prefecture == '兵庫県'}"> selected</c:if>>兵庫県</option>
+        <option value="奈良県"<c:if test="${company.place_prefecture == '奈良県'}"> selected</c:if>>奈良県</option>
+        <option value="和歌山県"<c:if test="${company.place_prefecture == '和歌山県'}"> selected</c:if>>和歌山県</option>
+        <option value="鳥取県"<c:if test="${company.place_prefecture == '鳥取県'}"> selected</c:if>>鳥取県</option>
+        <option value="島根県"<c:if test="${company.place_prefecture == '島根県'}"> selected</c:if>>島根県</option>
+        <option value="岡山県"<c:if test="${company.place_prefecture == '岡山県'}"> selected</c:if>>岡山県</option>
+        <option value="広島県"<c:if test="${company.place_prefecture == '広島県'}"> selected</c:if>>広島県</option>
+        <option value="山口県"<c:if test="${company.place_prefecture == '山口県'}"> selected</c:if>>山口県</option>
+        <option value="徳島県"<c:if test="${company.place_prefecture == '徳島県'}"> selected</c:if>>徳島県</option>
+        <option value="香川県"<c:if test="${company.place_prefecture == '香川県'}"> selected</c:if>>香川県</option>
+        <option value="愛媛県"<c:if test="${company.place_prefecture == '愛媛県'}"> selected</c:if>>愛媛県</option>
+        <option value="高知県"<c:if test="${company.place_prefecture == '高知県'}"> selected</c:if>>高知県</option>
+        <option value="福岡県"<c:if test="${company.place_prefecture == '福岡県'}"> selected</c:if>>福岡県</option>
+        <option value="佐賀県"<c:if test="${company.place_prefecture == '佐賀県'}"> selected</c:if>>佐賀県</option>
+        <option value="長崎県"<c:if test="${company.place_prefecture == '長崎県'}"> selected</c:if>>長崎県</option>
+        <option value="熊本県"<c:if test="${company.place_prefecture == '熊本県'}"> selected</c:if>>熊本県</option>
+        <option value="大分県"<c:if test="${company.place_prefecture == '大分県'}"> selected</c:if>>大分県</option>
+        <option value="宮崎県"<c:if test="${company.place_prefecture == '宮崎県'}"> selected</c:if>>宮崎県</option>
+        <option value="鹿児島県"<c:if test="${company.place_prefecture == '鹿児島県'}"> selected</c:if>>鹿児島県</option>
+        <option value="沖縄県"<c:if test="${company.place_prefecture == '沖縄県'}"> selected</c:if>>沖縄県</option>
 
  </select>
 <br /><br />
@@ -79,24 +79,24 @@
 
     <option value=未登録 >"選択してください"</option>
 
-        <option value="農業，林業">農業，林業</option>
-        <option value="漁業">漁業</option>
-        <option value="鉱業，採石業，砂利採取業">鉱業，採石業，砂利採取業</option>
-        <option value="建設業">建設業</option>
-        <option value="製造業">製造業</option>
-        <option value="電気・ガス・熱供給・水道業">電気・ガス・熱供給・水道業</option>
-        <option value="情報通信業">情報通信業</option>
-        <option value="運輸業，郵便業">運輸業，郵便業</option>
-        <option value="卸売業・小売業">卸売業・小売業</option>
-        <option value="金融業・保険業">金融業・保険業</option>
-        <option value="不動産業，物品賃貸業">不動産業，物品賃貸業</option>
-        <option value="教育，学習支援業">教育，学習支援業</option>
-        <option value="医療，福祉">医療，福祉</option>
-        <option value="学術研究，専門・技術サービス業">学術研究，専門・技術サービス業</option>
-        <option value="宿泊業，飲食サービス業">宿泊業，飲食サービス業</option>
-        <option value="生活関連サービス業，娯楽業">生活関連サービス業，娯楽業</option>
-        <option value="人材関連サービス業">人材関連サービス業</option>
-        <option value="その他のサービス業">その他のサービス業</option>
+        <option value="農業，林業"<c:if test="${company.industry == '農業，林業'}"> selected</c:if>>農業，林業</option>
+        <option value="漁業"<c:if test="${company.industry == ''}"> selected</c:if>>漁業</option>
+        <option value="鉱業，採石業，砂利採取業"<c:if test="${company.industry == '鉱業，採石業，砂利採取業'}"> selected</c:if>>鉱業，採石業，砂利採取業</option>
+        <option value="建設業"<c:if test="${company.industry == '建設業'}"> selected</c:if>>建設業</option>
+        <option value="製造業"<c:if test="${company.industry == '製造業'}"> selected</c:if>>製造業</option>
+        <option value="電気・ガス・熱供給・水道業"<c:if test="${company.industry == '電気・ガス・熱供給・水道業'}"> selected</c:if>>電気・ガス・熱供給・水道業</option>
+        <option value="情報通信業"<c:if test="${company.industry == '情報通信業'}"> selected</c:if>>情報通信業</option>
+        <option value="運輸業，郵便業"<c:if test="${company.industry == '運輸業，郵便業'}"> selected</c:if>>運輸業，郵便業</option>
+        <option value="卸売業・小売業"<c:if test="${company.industry == '卸売業・小売業'}"> selected</c:if>>卸売業・小売業</option>
+        <option value="金融業・保険業"<c:if test="${company.industry == '金融業・保険業'}"> selected</c:if>>金融業・保険業</option>
+        <option value="不動産業，物品賃貸業"<c:if test="${company.industry == '不動産業，物品賃貸業'}"> selected</c:if>>不動産業，物品賃貸業</option>
+        <option value="教育，学習支援業"<c:if test="${company.industry == '教育，学習支援業'}"> selected</c:if>>教育，学習支援業</option>
+        <option value="医療，福祉"<c:if test="${company.industry == '医療，福祉'}"> selected</c:if>>医療，福祉</option>
+        <option value="学術研究，専門・技術サービス業"<c:if test="${company.industry == '学術研究，専門・技術サービス業'}"> selected</c:if>>学術研究，専門・技術サービス業</option>
+        <option value="宿泊業，飲食サービス業"<c:if test="${company.industry == '宿泊業，飲食サービス業'}"> selected</c:if>>宿泊業，飲食サービス業</option>
+        <option value="生活関連サービス業，娯楽業"<c:if test="${company.industry == '生活関連サービス業，娯楽業'}"> selected</c:if>>生活関連サービス業，娯楽業</option>
+        <option value="人材関連サービス業"<c:if test="${company.industry == '人材関連サービス業'}"> selected</c:if>>人材関連サービス業</option>
+        <option value="その他のサービス業"<c:if test="${company.industry == 'その他のサービス業'}"> selected</c:if>>その他のサービス業</option>
 
  </select>
 <br /><br />
@@ -106,24 +106,24 @@
 <br /><br />
 
 <label for="email">メールアドレス</label><br />
-<input type="text" name="email" value="${company.email}" />
+<input required type="text" name="email" value="${company.email}" />
 <br /><br />
 
 <label for="budget">サービスの予算帯</label><br />
     <select name="budget">
 
      <option value="0" >"選択してください"</option>
-        <option value="500000">～500,000</option>
-        <option value="1000000">500,000～1,000,000</option>
-        <option value="2000000">1,000,000～2,000,000</option>
-        <option value="3000000">2,000,000～3,000,000</option>
-        <option value="4000000">3,000,000～4,000,000</option>
-        <option value="5000000">4,000,000～5,000,000</option>
-        <option value="6000000">5,000,000～6,000,000</option>
-        <option value="7000000">6,000,000～7,000,000</option>
-        <option value="8000000">7,000,000～8,000,000</option>
-        <option value="9000000">8,000,000～9,000,000</option>
-        <option value="10000000">9,000,000～10,000,000</option>
+        <option value="500000"<c:if test="${company.budget == 500000}"> selected</c:if>>～500,000</option>
+        <option value="1000000"<c:if test="${company.budget == 1000000}"> selected</c:if>>500,000～1,000,000</option>
+        <option value="2000000"<c:if test="${company.budget == 2000000}"> selected</c:if>>1,000,000～2,000,000</option>
+        <option value="3000000"<c:if test="${company.budget == 3000000}"> selected</c:if>>2,000,000～3,000,000</option>
+        <option value="4000000"<c:if test="${company.budget == 4000000}"> selected</c:if>>3,000,000～4,000,000</option>
+        <option value="5000000"<c:if test="${company.budget == 5000000}"> selected</c:if>>4,000,000～5,000,000</option>
+        <option value="6000000"<c:if test="${company.budget == 6000000}"> selected</c:if>>5,000,000～6,000,000</option>
+        <option value="7000000"<c:if test="${company.budget == 7000000}"> selected</c:if>>6,000,000～7,000,000</option>
+        <option value="8000000"<c:if test="${company.budget == 8000000}"> selected</c:if>>7,000,000～8,000,000</option>
+        <option value="9000000"<c:if test="${company.budget == 9000000}"> selected</c:if>>8,000,000～9,000,000</option>
+        <option value="10000000"<c:if test="${company.budget == 10000000}"> selected</c:if>>9,000,000～10,000,000</option>
 
     </select>
 <br /><br />
@@ -154,4 +154,4 @@
 
 
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">登録</button>
+<button class="button" type="submit">登録</button>

@@ -55,8 +55,9 @@
                     </tbody>
                 </table>
 
-
+                <c:if test="${sessionScope.login_user != null }">
                     <p><a href="<c:url value="/users/edit?id=${user.id}" />">ユーザー情報を編集する</a></p>
+                </c:if>
 
             </c:when>
             <c:otherwise>

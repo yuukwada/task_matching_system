@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -118,16 +120,26 @@ public class Company {
     private String achieve_image3;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-
     @ManyToMany(mappedBy="favorite_Company")
     private List<Report> favorite_Report;
 
     @ManyToMany(mappedBy="comment_Company")
     private List<User> comment_User;
 
-//  // 多対多
-//  @ManyToMany(mappedBy = "favotiteReports", fetch = FetchType.EAGER)
-//  List<Employee> favoritedEmployees;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToMany
+    @JoinTable(name="favorites_c",joinColumns=@JoinColumn(name="favorite_Company_C"),
+                               inverseJoinColumns=@JoinColumn(name="favorite_User"))
+    private List<User> favorite_User;
+
+
+    public List<User> getFavorite_User() {
+        return favorite_User;
+    }
+
+    public void setFavorite_User(List<User> favorite_User) {
+        this.favorite_User = favorite_User;
+    }
 
     public List<Report> getFavorite_Report() {
         return favorite_Report;

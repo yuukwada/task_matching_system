@@ -106,7 +106,7 @@
                <br /><br />
 
                <input type="hidden" name="_token" value="${_token}" />
-               <button type="submit">検索</button>
+               <button class="button" type="submit">検索</button>
         </form>
 
         <br/><br/>

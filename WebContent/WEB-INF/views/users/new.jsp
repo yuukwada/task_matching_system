@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <h2>ユーザー 新規登録ページ</h2>
-        <p>*氏名、Emailアドレス、パスワードは必須入力項目です*</p>
+        <p class=form_alerm>*氏名、Emailアドレス、生年月日、パスワードは必須入力項目です*</p>
 
         <form method="POST" enctype="multipart/form-data" action="<c:url value='/users/create' />">
             <c:import url="user_form.jsp" />

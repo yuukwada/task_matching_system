@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Company;
-import models.Favorite;
+import models.Favorite_R;
 import models.Report;
 import utils.DBUtil;
 
@@ -39,7 +39,7 @@ public class ReportsFavoriteServlet extends HttpServlet {
 
 
 
-        Favorite f = new Favorite();
+        Favorite_R f = new Favorite_R();
         f.setCompany(login_company);
         f.setReport(report);
 

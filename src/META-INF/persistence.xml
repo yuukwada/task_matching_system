@@ -5,8 +5,9 @@
 		<class>models.Report</class>
 		<class>models.Company</class>
 		<class>models.User</class>
-		<class>models.Favorite</class>
 		<class>models.Comment</class>
+		<class>models.Favorite_C</class>
+		<class>models.Favorite_R</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/task_matching_system?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>

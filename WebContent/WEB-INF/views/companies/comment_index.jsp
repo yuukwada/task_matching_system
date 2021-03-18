@@ -37,6 +37,7 @@
             </tbody>
         </table>
 
+
         <div id="pagination">
             （全 ${comment_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((comment_count - 1) / 15) + 1}" step="1">

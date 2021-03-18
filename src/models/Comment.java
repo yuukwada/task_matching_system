@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,10 +42,19 @@ public class Comment {
     @JoinColumn(name="company_id")
     private Company company;
 
+    @Column(name = "created_at", nullable = false)
+    private Timestamp created_at;
+
+    @Column(name = "updated_at", nullable = false)
+    private Timestamp updated_at;
+
+    @Column(name = "delete_flag")
+    private Integer delete_flag;
+
+
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-
 
 
 
@@ -62,6 +73,30 @@ public class Comment {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public Integer getDelete_flag() {
+        return delete_flag;
+    }
+
+    public void setDelete_flag(Integer delete_flag) {
+        this.delete_flag = delete_flag;
     }
 
     public Company getCompany() {

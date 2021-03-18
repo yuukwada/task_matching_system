@@ -15,9 +15,9 @@ public class ReportsValidator {
             errors.add(name_error);
         }
 
-        String email_error=_validateContent(r.getContent());
-        if(!email_error.equals("")){
-            errors.add(email_error);
+        String content_error=_validateContent(r.getContent());
+        if(!content_error.equals("")){
+            errors.add(content_error);
         }
 
         String industry_error=_validateIndustry(r.getIndustry());
@@ -28,6 +28,11 @@ public class ReportsValidator {
         String budget_error=_validateBudget(r.getBudget());
         if(!budget_error.equals("")){
             errors.add(budget_error);
+        }
+
+        String place_prefecture_error=_validatePlace_prefecture(r.getPlace_prefecture());
+        if(!place_prefecture_error.equals("")){
+            errors.add(place_prefecture_error);
         }
 
 
@@ -56,20 +61,26 @@ public class ReportsValidator {
         return "";
     }
 
-    private static String _validateIndustry(String industry) {
-        if(industry == null || industry.equals("") ) {
-            return "お悩みに関係の業種を入力してください。";
+    private static String _validatePlace_prefecture(String place_prefecture) {
+        if(place_prefecture == null || place_prefecture.equals("未登録")) {
+            return "お悩みに関係の都道府県を入力してください。";
             }
 
+        return "";
+    }
+
+    private static String _validateIndustry(String industry) {
+        if(industry == null || industry.equals("未登録")) {
+            return "お悩みに関係の業種を入力してください。";
+            }
 
         return "";
     }
 
     private static String _validateBudget(Integer budget) {
-        if(budget == null || budget.equals("") ) {
-            return "パスワードを入力してください。";
+        if(budget == null || budget == 0) {
+            return "ご予算を入力してください。";
             }
-
 
         return "";
     }

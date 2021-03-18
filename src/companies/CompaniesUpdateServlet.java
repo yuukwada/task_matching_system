@@ -53,12 +53,18 @@ public class CompaniesUpdateServlet extends HttpServlet {
             c.setAchieve(request.getParameter("achieve"));
 
 
-            c.setPassword(
-                EncryptUtil.getPasswordEncrypt(
-                    request.getParameter("password"),
-                        (String)this.getServletContext().getAttribute("pepper")
-                    )
-                );
+            Boolean passwordCheckFlag = true;
+            String password = request.getParameter("password");
+            if(password == null || password.equals("")) {
+                passwordCheckFlag = false;
+            } else {
+                c.setPassword(
+                        EncryptUtil.getPasswordEncrypt(
+                                password,
+                                (String)this.getServletContext().getAttribute("pepper")
+                                )
+                        );
+            }
 
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
@@ -94,7 +100,7 @@ public class CompaniesUpdateServlet extends HttpServlet {
                 c.setAchieve_image3(achieve_image3);
             }
 
-            List<String> errors = CompaniesValidator.validate(c);
+            List<String> errors = CompaniesValidator.validate(c,passwordCheckFlag);
             if(errors.size() > 0) {
                 em.close();
 
@@ -102,7 +108,7 @@ public class CompaniesUpdateServlet extends HttpServlet {
                 request.setAttribute("company", c);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/companies/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/companies/edit.jsp");
                 rd.forward(request, response);
             } else {
 

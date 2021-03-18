@@ -8,7 +8,7 @@ import models.Company;
 
 public class CompaniesValidator {
 
-    public static List<String> validate(Company c){
+    public static List<String> validate(Company c , Boolean passwordCheckFlag){
         List<String> errors=new ArrayList<String>();
 
         String name_error=_validateName(c.getName());
@@ -21,7 +21,7 @@ public class CompaniesValidator {
             errors.add(email_error);
         }
 
-        String password_error=_validatePassword(c.getPassword());
+        String password_error=validatePassword(c.getPassword(),passwordCheckFlag);
         if(!password_error.equals("")){
             errors.add(password_error);
         }
@@ -52,12 +52,11 @@ public class CompaniesValidator {
         return "";
     }
 
-    private static String _validatePassword(String password) {
-        if(password == null || password.equals("") ) {
-            return "パスワードを入力してください。";
-            }
+    private static String validatePassword(String password, Boolean passwordCheckFlag) {
 
-
+        if(passwordCheckFlag && (password == null || password.equals(""))) {
+            return "! パスワードを入力してください !";
+        }
         return "";
     }
 

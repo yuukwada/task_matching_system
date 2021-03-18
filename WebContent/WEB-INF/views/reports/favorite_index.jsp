@@ -10,7 +10,7 @@
         </c:if>
 
 
-        <h2>お悩み一覧</h2>
+        <h2>気になるお悩み一覧</h2>
         <a href="<c:url value="/companies/index" />">企業/お悩み 切り替え</a>
         <table id="favorited_report_list">
             <tbody>

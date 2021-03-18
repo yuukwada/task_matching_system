@@ -56,11 +56,10 @@ public class UsersCreateServlet extends HttpServlet {
             u.setGender(request.getParameter("gender"));
             u.setDelete_flag(0);
 
-            Date birthday = new Date(System.currentTimeMillis());
+            String birthday_str=request.getParameter("birthday");
 
-            birthday = Date.valueOf(request.getParameter("birthday"));
+            Date birthday=Date.valueOf(birthday_str);
             u.setBirthday(birthday);
-
 
             u.setPassword(
                 EncryptUtil.getPasswordEncrypt(
@@ -82,7 +81,7 @@ public class UsersCreateServlet extends HttpServlet {
                 u.setImage(image);
             }
 
-            List<String> errors = UsersValidator.validate(u,true,true);
+            List<String> errors = UsersValidator.validate(u,true);
             if(errors.size() > 0) {
                 em.close();
 
@@ -119,5 +118,6 @@ public class UsersCreateServlet extends HttpServlet {
         return name;
 
     }
+
 
 }

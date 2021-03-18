@@ -4,7 +4,7 @@
     <c:param name="content">
         <c:if test="${hasError}">
             <div id="flush_error">
-                社員番号かパスワードが間違っています。
+                メールアドレスかパスワードが間違っています。
             </div>
         </c:if>
         <c:if test="${flush != null}">
@@ -23,10 +23,11 @@
             <br /><br />
 
             <input type="hidden" name="_token" value="${_token}" />
-            <button type="submit">ログイン</button>
+            <button class="button" type="submit">ログイン</button>
         </form>
+        <br/><br/>
 
-        <a href="<c:url value="/" />">トップに戻る</a>
+        <a href="<c:url value="/login" />">トップに戻る</a>
 
     </c:param>
 </c:import>

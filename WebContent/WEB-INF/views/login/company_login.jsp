@@ -23,10 +23,12 @@
             <br /><br />
 
             <input type="hidden" name="_token" value="${_token}" />
-            <button type="submit">ログイン</button>
+            <button class="button" type="submit">ログイン</button>
         </form>
 
-        <a href="<c:url value="/" />">トップに戻る</a>
+        <br/><br/>
+
+        <a href="<c:url value="/login" />">トップに戻る</a>
 
     </c:param>
 </c:import>

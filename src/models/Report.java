@@ -27,6 +27,14 @@ import javax.persistence.Table;
         query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
     ),
     @NamedQuery(
+        name = "getSelfReports",
+        query = "SELECT r FROM Report AS r WHERE r.user=:user ORDER BY r.id DESC"
+        ),
+    @NamedQuery(
+            name = "getSelfCounts",
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.user=:user "
+            ),
+    @NamedQuery(
         name = "getReportsCount",
         query = "SELECT COUNT(r) FROM Report AS r"
     ),
@@ -102,7 +110,7 @@ public class Report {
     private User user;
 
     @ManyToMany(fetch=FetchType.EAGER)
-    @JoinTable(name="favorite",joinColumns=@JoinColumn(name="favorite_Report"),
+    @JoinTable(name="favorites_r",joinColumns=@JoinColumn(name="favorite_Report"),
                                inverseJoinColumns=@JoinColumn(name="favorite_Company"))
     private List<Company> favorite_Company;
 

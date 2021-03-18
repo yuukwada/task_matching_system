@@ -5,6 +5,8 @@
         <c:choose>
             <c:when test="${user != null}">
                 <h2>個人情報編集ページ</h2>
+                <p class=form_alerm>*氏名、Emailアドレス、生年月日、パスワードは必須入力項目です*</p>
+
                 <form method="POST" enctype="multipart/form-data" action="<c:url value='/users/update' />">
                     <c:import url="user_form.jsp" />
                 </form>

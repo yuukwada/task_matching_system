@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
 
     <c:param name="content">
-        <h1>ようこそ、営業マッチングシステムへ</h1>
+        <h1>ようこそ、お悩みマッチングシステムへ</h1>
         <br/><br/><br/><br/><br/><br/>
 
         <div class="login_create">
