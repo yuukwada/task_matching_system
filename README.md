@@ -50,21 +50,37 @@ task_matching_systemは以下の機能を実装しています。
 ## Heroku URL
 
 
+
 ## 動画
 - ログイン/気になる!機能/コメント投稿/検索機能
 
-https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4
+ログイン機能：　https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4
 
-https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4
+気になる!機能：　https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4
 
-https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4
+コメント機能：　https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4
 
-https://user-images.githubusercontent.com/77527527/111903480-d728f080-8a85-11eb-8aea-a5793ecd1e49.mp4
-
-
+検索機能：　https://user-images.githubusercontent.com/77527527/111903480-d728f080-8a85-11eb-8aea-a5793ecd1e49.mp4
 
 
+- ユーザー/企業/お悩み/新規登録ページ
 
+ユーザー新規登録：
+
+お悩み新規登録：
+
+企業新規登録：
+
+
+- ユーザー詳細/企業詳細/お悩み詳細
+
+ユーザー詳細：
+
+企業詳細：
+
+お悩み詳細：
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
