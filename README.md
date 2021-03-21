@@ -51,14 +51,21 @@ task_matching_systemは以下の機能を実装しています。
 
 
 ## 動画
-- 新規会員登録/写真投稿
+- ログイン/気になる!機能/コメント投稿/検索機能
 
-![新規会員登録]()
+https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4
+
+https://user-images.githubusercontent.com/77527527/111903453-b6609b00-8a85-11eb-940a-5b78338c6169.mp4
+
+https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4
+
+https://user-images.githubusercontent.com/77527527/111903480-d728f080-8a85-11eb-8aea-a5793ecd1e49.mp4
 
 
-- ログイン/いいね機能/コメント投稿/ログアウト
 
-![ログイン・いいね機能・コメント投稿・ログアウト]()
+
+
+
 
 
 
