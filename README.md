@@ -2,6 +2,9 @@
 「お悩み」は企業、個人に関わらず、大なり小なり誰でも持っているものです。　　
 お悩みを解決できるがニーズを欲しがっている企業と、ニーズを持っているが解決法を欲しがっているお客様を結び付けるためのツールです。
 
+# 仕様技術
+Java(8),MySQL(5.1.45),HTML5,CSS3,Servlet,jstl,JPQL,Hibernate,JPQL,GitHub,Eclipse
+
 # 概要
 task_matching_systemは以下の機能を実装しています。
 
@@ -56,34 +59,31 @@ https://task-matching-system-tms.herokuapp.com/login
 
 ![ログイン機能](https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4)
 
-気になる!機能：　https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4
+![気になる!機能](https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4)
 
-コメント機能：　https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4
+![コメント機能](https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4)
 
-検索機能：　https://user-images.githubusercontent.com/77527527/111903480-d728f080-8a85-11eb-8aea-a5793ecd1e49.mp4
+![検索機能](https://user-images.githubusercontent.com/77527527/111903480-d728f080-8a85-11eb-8aea-a5793ecd1e49.mp4)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - ユーザー/企業/お悩み/新規登録ページ
 
-ユーザー新規登録： https://user-images.githubusercontent.com/77527527/111910018-f41fec80-8aa2-11eb-80e4-cae2ddd2156f.mp4
+![ユーザー新規登録](https://user-images.githubusercontent.com/77527527/111910018-f41fec80-8aa2-11eb-80e4-cae2ddd2156f.mp4)
 
-企業新規登録： https://user-images.githubusercontent.com/77527527/111910061-23cef480-8aa3-11eb-8055-045eff3466ef.mp4
+![企業新規登録](https://user-images.githubusercontent.com/77527527/111910061-23cef480-8aa3-11eb-8055-045eff3466ef.mp4)
 
-お悩み新規登録：　https://user-images.githubusercontent.com/77527527/111910039-0863e980-8aa3-11eb-94bf-b49cbf820ee5.mp4
+![お悩み新規登録](https://user-images.githubusercontent.com/77527527/111910039-0863e980-8aa3-11eb-94bf-b49cbf820ee5.mp4)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - ユーザー詳細/企業詳細/お悩み/詳細ページ
 
-ユーザー詳細：　https://user-images.githubusercontent.com/77527527/111910073-3c3f0f00-8aa3-11eb-9acc-03dfe643625d.mp4
+![ユーザー詳細](https://user-images.githubusercontent.com/77527527/111910073-3c3f0f00-8aa3-11eb-9acc-03dfe643625d.mp4)
 
+![企業詳細](https://user-images.githubusercontent.com/77527527/111910089-4f51df00-8aa3-11eb-8d94-3fd6a981074b.mp4)
 
-企業詳細：　https://user-images.githubusercontent.com/77527527/111910089-4f51df00-8aa3-11eb-8d94-3fd6a981074b.mp4
-
-
-
-お悩み詳細：　https://user-images.githubusercontent.com/77527527/111910113-6690cc80-8aa3-11eb-93c2-89052d06a560.mp4
+![お悩み詳細](https://user-images.githubusercontent.com/77527527/111910113-6690cc80-8aa3-11eb-93c2-89052d06a560.mp4)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
