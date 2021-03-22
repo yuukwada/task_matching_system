@@ -54,7 +54,7 @@ https://task-matching-system-tms.herokuapp.com/login
 ## 動画
 - ログイン/気になる!機能/コメント投稿/検索機能
 
-[ログイン機能](　https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4)
+![ログイン機能](https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4)
 
 気になる!機能：　https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4
 
