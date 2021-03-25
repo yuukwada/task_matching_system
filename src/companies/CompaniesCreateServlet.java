@@ -98,7 +98,7 @@ public class CompaniesCreateServlet extends HttpServlet {
                 c.setAchieve_image3(achieve_image3);
             }
 
-            List<String> errors = CompaniesValidator.validate(c,true);
+            List<String> errors = CompaniesValidator.validate(c,true,true);
             if(errors.size() > 0) {
                 em.close();
 

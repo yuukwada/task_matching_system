@@ -75,7 +75,7 @@
                         <p><a href="<c:url value="/companies/edit?id=${company.id}" />">企業情報を編集</a></p>
                     </c:if>
 
-                    <br/>
+                    <br/><br/>
 
                     <c:if test="${sessionScope.login_user != null}">
                       <div class="company_comment">

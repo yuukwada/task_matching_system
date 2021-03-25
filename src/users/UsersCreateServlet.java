@@ -81,7 +81,7 @@ public class UsersCreateServlet extends HttpServlet {
                 u.setImage(image);
             }
 
-            List<String> errors = UsersValidator.validate(u,true);
+            List<String> errors = UsersValidator.validate(u,true,true);
             if(errors.size() > 0) {
                 em.close();
 

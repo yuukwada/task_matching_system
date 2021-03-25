@@ -24,6 +24,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>お悩みに関係の都道府県</th>
+                            <td>
+                                <c:out value="${report.place_prefecture}" />
+                            </td>
+                        </tr>
+                        <tr>
                             <th>お悩みに関係の業種</th>
                             <td>
                                 <c:out value="${report.industry}" />

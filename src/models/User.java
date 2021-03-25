@@ -29,10 +29,14 @@ import org.hibernate.annotations.LazyCollectionOption;
         name = "getUsersCount",
         query = "SELECT COUNT(u) FROM User AS u"
     ),
-        @NamedQuery(
-            name = "user_checkLoginCodeAndPassword",
-            query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.email = :email AND u.password = :pass"
-        )
+    @NamedQuery(
+        name = "user_checkLoginCodeAndPassword",
+        query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.email = :email AND u.password = :pass"
+    ),
+    @NamedQuery(
+        name = "checkRegisteredCode_u",
+        query = "SELECT COUNT(u) FROM User AS u WHERE u.email = :email"
+    )
 })
 
 @Entity

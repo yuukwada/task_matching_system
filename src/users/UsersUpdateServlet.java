@@ -47,7 +47,6 @@ public class UsersUpdateServlet extends HttpServlet {
 
             u.setName(request.getParameter("name"));
             u.setPhone_number(request.getParameter("phone_number"));
-            u.setEmail(request.getParameter("email"));
             u.setPlace_prefecture(request.getParameter("place_prefecture"));
             u.setPlace_address(request.getParameter("place_address"));
             u.setPhone_number(request.getParameter("phone_number"));
@@ -59,6 +58,13 @@ public class UsersUpdateServlet extends HttpServlet {
                 birthday = Date.valueOf(request.getParameter("birthday"));
             }
             u.setBirthday(birthday);
+
+            Boolean emailDuplicateCheckFlag = true;
+            if(u.getEmail().equals(request.getParameter("email"))) {
+                emailDuplicateCheckFlag = false;
+            } else {
+                u.setEmail(request.getParameter("email"));
+            }
 
 
             Boolean passwordCheckFlag = true;
@@ -86,7 +92,7 @@ public class UsersUpdateServlet extends HttpServlet {
                 u.setImage(image);
             }
 
-            List<String> errors = UsersValidator.validate(u,passwordCheckFlag);
+            List<String> errors = UsersValidator.validate(u, emailDuplicateCheckFlag  ,passwordCheckFlag);
             if(errors.size() > 0) {
                 em.close();
 

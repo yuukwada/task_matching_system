@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import models.User;
+import utils.DBUtil;
 
 
 public class UsersValidator {
 
-    public static List<String> validate(User u , Boolean passwordCheckFlag){
+    public static List<String> validate(User u , Boolean emailDuplicateCheckFlag , Boolean passwordCheckFlag){
         List<String> errors=new ArrayList<String>();
 
         String name_error=_validateName(u.getName());
@@ -17,7 +20,7 @@ public class UsersValidator {
             errors.add(name_error);
         }
 
-        String email_error=_validateEmail(u.getEmail());
+        String email_error=_validateEmail(u.getEmail() , emailDuplicateCheckFlag);
         if(!email_error.equals("")){
             errors.add(email_error);
         }
@@ -33,13 +36,10 @@ public class UsersValidator {
         }
 
 
-
-
-
         return errors;
 
-
     }
+
 
     private  static String _validateName(String name){
         if(name == null || name.equals("")) {
@@ -49,10 +49,21 @@ public class UsersValidator {
         return "";
     }
 
-    private static String _validateEmail(String email) {
+    private static String _validateEmail(String email ,  Boolean emailDuplicateCheckFlag) {
         if(email == null || email.equals("")) {
             return "Emailアドレスを入力してください。";
             }
+
+        if(emailDuplicateCheckFlag) {
+            EntityManager em = DBUtil.createEntityManager();
+            long users_count = (long)em.createNamedQuery("checkRegisteredCode_u", Long.class)
+                                               .setParameter("email", email)
+                                               .getSingleResult();
+            em.close();
+            if(users_count > 0) {
+                return "入力されたemailは重複のため、利用できません。";
+            }
+        }
 
 
         return "";
@@ -68,11 +79,12 @@ public class UsersValidator {
     }
 
 
-    private static String validatePassword(String password, Boolean passwordCheckFlag) {
+    private static String validatePassword(String password, Boolean passwordDuplicateCheckFlag) {
 
-        if(passwordCheckFlag && (password == null || password.equals(""))) {
+        if(passwordDuplicateCheckFlag && (password == null || password.equals(""))) {
             return "! パスワードを入力してください !";
         }
+
         return "";
     }
 

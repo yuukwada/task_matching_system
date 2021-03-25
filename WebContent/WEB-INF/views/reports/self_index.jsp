@@ -17,7 +17,7 @@
                 <tr>
                     <th>タイトル</th>
                     <th>お名前</th>
-                    <th>住所</th>
+                    <th>地域</th>
                     <th>予算帯</th>
                     <th>関係業種</th>
                     <th> 操作 </th>
@@ -29,27 +29,21 @@
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${report.title}" /></td>
                         <td><c:out value="${report.user.name}" /></td>
-                        <td><c:out value="${report.user.place_prefecture}" /></td>
+                        <td><c:out value="${report.place_prefecture}" /></td>
                         <td><c:out value="${report.budget}" /></td>
                         <td><c:out value="${report.industry}" /></td>
                         <td><a href="<c:url value='/reports/show?id=${report.id}' />">詳細を表示</a></td>
                         <td>
                             <c:choose>
                                 <c:when test="${report.delete_flag == 1}">
-                                        （解決済みです!）
+                                        （解決済み!）
                                 </c:when>
                                 <c:when test="${report.delete_flag == 0}">
-                                    <p><a href="#" onclick="confirmDestroy();">解決済み登録</a></p>
-                                    <form method="POST" action="<c:url value='/reports/destroy' />">
-                                        <input type="hidden" name="report_id" value="${report.id}" />
-                                    </form>
-                                    <script>
-                                        function confirmDestroy() {
-                                            if(confirm("本当に解決済みにしてよろしいですか？")) {
-                                                document.forms[1].submit();
-                                            }
-                                        }
-                                    </script>
+
+                                 <form method="POST" action="<c:url value='/reports/destroy' />">
+                                    <input type="hidden" name="report_id"value="${report.id}">
+                                    <button class="button" type="submit">解決済み登録</button>
+                                 </form>
                                 </c:when>
                             </c:choose>
                         </td>

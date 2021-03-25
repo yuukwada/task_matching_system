@@ -16,7 +16,7 @@
                     <th>タイトル</th>
                     <th>お名前</th>
                     <th>電話番号</th>
-                    <th>住所</th>
+                    <th>地域</th>
                     <th>予算帯</th>
                     <th>お悩みに関係する業種</th>
                     <th> </th>
@@ -27,10 +27,19 @@
                         <td><c:out value="${report.title}" /></td>
                         <td><c:out value="${report.user.name}" /></td>
                         <td><c:out value="${report.user.phone_number}" /></td>
-                        <td><c:out value="${report.user.place_prefecture}" /></td>
+                        <td><c:out value="${report.place_prefecture}" /></td>
                         <td><c:out value="${report.budget}" /></td>
                         <td><c:out value="${report.industry}" /></td>
-                        <td><a href="<c:url value='/reports/show?id=${report.id}' />">詳細を表示</a></td>
+                        <td>
+                        <c:choose>
+                                <c:when test="${report.delete_flag == 1}">
+                                        （解決済み!）
+                                </c:when>
+                                <c:when test="${report.delete_flag == 0}">
+                                  <a href="<c:url value='/reports/show?id=${report.id}' />">詳細を表示</a>
+                                </c:when>
+                        </c:choose>
+                        </td>
                         <td><a href="<c:url value='/users/show?id=${report.user.id}' />">ユーザー詳細</a></td>
                     </tr>
                 </c:forEach>
@@ -38,7 +47,7 @@
         </table>
 
         <div id="pagination">
-            （全 ${reports_count} 件）<br />
+
             <c:forEach var="i" begin="1" end="${((reports_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">

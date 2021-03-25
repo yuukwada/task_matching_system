@@ -34,7 +34,9 @@ public class ReportsEditServlet extends HttpServlet {
 
         EntityManager em = DBUtil.createEntityManager();
 
-        Report r = em.find(Report.class, Integer.parseInt(request.getParameter("id")));
+        Integer report_id=Integer.parseInt(request.getParameter("id"));
+
+        Report r = em.find(Report.class, report_id);
 
         em.close();
 

@@ -10,13 +10,12 @@
 		<class>models.Favorite_R</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/task_matching_system?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
-			<property name="javax.persistence.jdbc.user" value="reauser"/>
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
-			<property name="javax.persistence.jdbc.password" value="reapass"/>
+			<property name="javax.persistence.jdbc.password" value="24724861"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_4677124913f7ca3?reconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+			<property name="javax.persistence.jdbc.user" value="bea8d2f877a6f7"/>
 		</properties>
 	</persistence-unit>
 </persistence>

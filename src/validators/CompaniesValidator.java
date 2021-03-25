@@ -3,12 +3,15 @@ package validators;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import models.Company;
+import utils.DBUtil;
 
 
 public class CompaniesValidator {
 
-    public static List<String> validate(Company c , Boolean passwordCheckFlag){
+    public static List<String> validate(Company c , Boolean emailDuplicateCheckFlag , Boolean passwordCheckFlag){
         List<String> errors=new ArrayList<String>();
 
         String name_error=_validateName(c.getName());
@@ -16,7 +19,7 @@ public class CompaniesValidator {
             errors.add(name_error);
         }
 
-        String email_error=_validateEmail(c.getEmail());
+        String email_error=_validateEmail(c.getEmail() , emailDuplicateCheckFlag);
         if(!email_error.equals("")){
             errors.add(email_error);
         }
@@ -43,11 +46,21 @@ public class CompaniesValidator {
         return "";
     }
 
-    private static String _validateEmail(String email) {
+    private static String _validateEmail(String email , Boolean emailDuplicateCheckFlag) {
         if(email == null || email.equals("")) {
             return "企業のEmailアドレスを入力してください。";
-            }
+        }
 
+        if(emailDuplicateCheckFlag) {
+            EntityManager em = DBUtil.createEntityManager();
+            long users_count = (long)em.createNamedQuery("checkRegisteredCode_c", Long.class)
+                                               .setParameter("email", email)
+                                               .getSingleResult();
+            em.close();
+            if(users_count > 0) {
+                return "入力されたemailは重複のため、利用できません。";
+            }
+        }
 
         return "";
     }

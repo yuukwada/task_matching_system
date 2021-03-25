@@ -43,7 +43,7 @@ public class C_LoginFilter implements Filter {
         String context_path = ((HttpServletRequest)request).getContextPath();
         String servlet_path = ((HttpServletRequest)request).getServletPath();
 
-        if(!servlet_path.matches("/css.*")) {
+        if(!servlet_path.matches("/css.*") && !servlet_path.matches("/uploaded.*")) {
             HttpSession session = ((HttpServletRequest)request).getSession();
 
                 Company c = (Company)session.getAttribute("login_company");
@@ -61,7 +61,7 @@ public class C_LoginFilter implements Filter {
 
                 }
 
-                if( c != null ) {
+                if( c != null && u == null ) {
 
                     if(!servlet_path.equals("/companies/index") && !servlet_path.equals("/reports/index") &&
                        !servlet_path.equals("/companies/new") && !servlet_path.equals("/companies/show") &&
@@ -69,8 +69,9 @@ public class C_LoginFilter implements Filter {
                        !servlet_path.equals("/companies/create") && !servlet_path.equals("/companies/destroy") &&
                        !servlet_path.equals("/reports/favorite") && !servlet_path.equals("/reports/favorite_index") &&
                        !servlet_path.equals("/reports/favorite_destroy") && !servlet_path.equals("/reports/search") &&
-                       !servlet_path.equals("/reports/search_index") && !servlet_path.equals("/companies/search") &&
-                       !servlet_path.equals("/companies/search_index")) {
+                       !servlet_path.equals("/reports/searchindex") && !servlet_path.equals("/companies/search") &&
+                       !servlet_path.equals("/companies/searchindex") && !servlet_path.equals("/reports/show") &&
+                       !servlet_path.equals("/users/show") && !servlet_path.equals("/company_logout") ) {
                         session.removeAttribute("login_company");
                         ((HttpServletResponse)response).sendRedirect(context_path + "/login");
                         return;
@@ -78,9 +79,9 @@ public class C_LoginFilter implements Filter {
 
                 }
 
-                if( u != null ) {
+                if( u != null && c == null ) {
 
-                    if(!servlet_path.equals("/users/shows") && !servlet_path.equals("/users/new") && !servlet_path.equals("/users/destroy") &&
+                    if(!servlet_path.equals("/users/show") && !servlet_path.equals("/users/new") && !servlet_path.equals("/users/destroy") &&
                        !servlet_path.equals("/users/create") && !servlet_path.equals("/users/edit") &&
                        !servlet_path.equals("/users/update") && !servlet_path.equals("/reports/new") &&
                        !servlet_path.equals("/reports/create") && !servlet_path.equals("/reports/edit") &&
@@ -88,9 +89,11 @@ public class C_LoginFilter implements Filter {
                        !servlet_path.equals("/companies/favorite_destroy") && !servlet_path.equals("/companies/favorite") &&
                        !servlet_path.equals("/companies/favorite_index") && !servlet_path.equals("/companies/search") &&
                        !servlet_path.equals("/companies/comment_index") && !servlet_path.equals("/companies/comment_show") &&
-                       !servlet_path.equals("/companies/comment") && !servlet_path.equals("/companies/search_index") &&
+                       !servlet_path.equals("/companies/comment") && !servlet_path.equals("/companies/searchindex") &&
                        !servlet_path.equals("/reports/self_index") && !servlet_path.equals("/reports/index") &&
-                       !servlet_path.equals("/reports/search") && !servlet_path.equals("/reports/search_index")){
+                       !servlet_path.equals("/reports/search") && !servlet_path.equals("/reports/searchindex") &&
+                       !servlet_path.equals("/companies/show") && !servlet_path.equals("/reports/show") &&
+                       !servlet_path.equals("/reports/destroy") && !servlet_path.equals("/user_logout") ){
 
                         session.removeAttribute("login_user");
                         ((HttpServletResponse)response).sendRedirect(context_path + "/login");

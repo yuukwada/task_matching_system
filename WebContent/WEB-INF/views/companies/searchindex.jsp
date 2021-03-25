@@ -9,7 +9,7 @@
         </c:if>
 
         <h2>検索企業一覧</h2>
-        <table id="employee_list">
+        <table id="report_list">
             <tbody>
                 <tr>
                     <th>企業名</th>

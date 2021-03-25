@@ -11,12 +11,12 @@
 
         <h2>企業一覧</h2>
         <a href="<c:url value="/reports/index" />">企業/お悩み 一覧切り替え</a>
-        <table id="employee_list">
+        <table id="report_list">
             <tbody>
                 <tr>
                     <th>企業名</th>
                     <th>業種</th>
-                    <th>所在地</th>
+                    <th class="place">所在地</th>
                     <th>予算帯</th>
                     <th>電話番号</th>
                     <th> 操作 </th>
@@ -29,7 +29,7 @@
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${company.name}" /></td>
                         <td><c:out value="${company.industry}" /></td>
-                        <td><c:out value="${company.place_prefecture}" /></td>
+                        <td class="place"><c:out value="${company.place_prefecture}" /></td>
                         <td><c:out value="${company.budget}" /></td>
                         <td><c:out value="${company.phone_number}" /></td>
                         <td><a href="<c:url value='/companies/show?id=${company.id}' />">詳細を表示</a></td>
@@ -52,7 +52,7 @@
                             <c:if test="${check_flag==1}">
                                 <form method="POST" action="<c:url value="/companies/favorite_destroy"/>">
                                     <input type="hidden" name="company_id"value="${company.id}">
-                                    <button class="antifollow" type="submit">☆解除</button>
+                                    <button class="antifollow" type="submit">解除</button>
                                 </form>
                             </c:if>
                             <c:if test="${check_flag==0}">

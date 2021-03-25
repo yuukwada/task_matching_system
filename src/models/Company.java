@@ -60,6 +60,10 @@ import org.hibernate.annotations.LazyCollectionOption;
     @NamedQuery(
         name="searchCompany_budget_place_industry",
         query="SELECT c FROM Company AS c WHERE c.budget <= :budget AND c.place_prefecture = :place_prefecture AND c.industry = :industry "
+        ),
+    @NamedQuery(
+        name = "checkRegisteredCode_c",
+        query = "SELECT COUNT(c) FROM Company AS c WHERE c.email = :email"
         )
 })
 

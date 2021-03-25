@@ -7,7 +7,7 @@ body {
 
 #header {
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-color: #333333;
 }
 
@@ -44,6 +44,7 @@ a{
 
 table, tr, th, td {
     border: 1px solid #cccccc;
+    font-size:13px;
 }
 
 table {
@@ -68,6 +69,7 @@ button {
 
 #footer {
     text-align: center;
+    width:100%;
 }
 
 #flush_success {
@@ -112,17 +114,17 @@ select {
 }
 
 .header_menu {
-    width: 100%;
+    width: 57%;
     padding-top: 17px;
-    padding-left: 3%;
     display: inline-block;
+     color:#fff;
 }
 
 .user_name {
     color:#fff;
     width: 36%;
     padding-right: 3%;
-    text-align: right;
+    text-align:right;
     display: inline-block;
 }
 
@@ -141,8 +143,6 @@ select {
 h1 a {
     color: #eeeeee;
 }
-
-
 
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
@@ -242,11 +242,23 @@ img{
     padding_top :10px;
 }
 
-.form_alerm{
-    font-weight:bold;
+.company_command{
+    padding-top:5px;
 }
 .button{
     background-color:#000;
     font-weight:bold;
     color:#fff;
+}
+
+.place {
+    width: 20%;
+}
+
+.action {
+    widtth: 23%;
+}
+
+.budget {
+    width: 18%;
 }

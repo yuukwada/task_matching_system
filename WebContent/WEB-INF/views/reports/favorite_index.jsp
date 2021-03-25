@@ -17,10 +17,10 @@
                 <tr>
                     <th>タイトル</th>
                     <th>お名前</th>
-                    <th>住所</th>
+                    <th>地域</th>
                     <th>予算帯</th>
                     <th>関係業種</th>
-                    <th> 操作 </th>
+                    <th class="action"> 操作 </th>
                     <th> 操作 </th>
                 </tr>
                 <c:forEach var="favorited_report" items="${favorited_reports}" varStatus="status">
@@ -28,10 +28,21 @@
 
                         <td><c:out value="${favorited_report.title}" /></td>
                         <td><c:out value="${favorited_report.user.name}" /></td>
-                        <td><c:out value="${favorited_report.user.place_prefecture}" /></td>
+                        <td><c:out value="${favorited_report.place_prefecture}" /></td>
                         <td><c:out value="${favorited_report.budget}" /></td>
                         <td><c:out value="${favorited_report.industry}" /></td>
-                        <td><a href="<c:url value='/reports/show?id=${favorited_report.id}' />">詳細を表示</a></td>
+                        <td>
+                        <c:choose>
+                                <c:when test="${favorited_report.delete_flag == 1}">
+                                        （解決済み!）
+                                </c:when>
+                                <c:when test="${favorited_report.delete_flag == 0}">
+                                  <a href="<c:url value='/reports/show?id=${report.id}' />">詳細を表示</a>
+                                </c:when>
+                        </c:choose>
+                        </td>
+
+
                         <td><a href="<c:url value='/users/show?id=${favorited_report.user.id}' />">ユーザー詳細</a></td>
 
                     </tr>

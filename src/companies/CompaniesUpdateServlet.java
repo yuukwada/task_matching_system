@@ -44,7 +44,6 @@ public class CompaniesUpdateServlet extends HttpServlet {
 
             c.setName(request.getParameter("name"));
             c.setPhone_number(request.getParameter("phone_number"));
-            c.setEmail(request.getParameter("email"));
             c.setPlace_prefecture(request.getParameter("place_prefecture"));
             c.setPlace_address(request.getParameter("place_address"));
             c.setPhone_number(request.getParameter("phone_number"));
@@ -64,6 +63,13 @@ public class CompaniesUpdateServlet extends HttpServlet {
                                 (String)this.getServletContext().getAttribute("pepper")
                                 )
                         );
+            }
+
+            Boolean emailDuplicateCheckFlag = true;
+            if(c.getEmail().equals(request.getParameter("email"))) {
+                emailDuplicateCheckFlag = false;
+            } else {
+                c.setEmail(request.getParameter("email"));
             }
 
 
@@ -100,7 +106,7 @@ public class CompaniesUpdateServlet extends HttpServlet {
                 c.setAchieve_image3(achieve_image3);
             }
 
-            List<String> errors = CompaniesValidator.validate(c,passwordCheckFlag);
+            List<String> errors = CompaniesValidator.validate(c, emailDuplicateCheckFlag ,passwordCheckFlag);
             if(errors.size() > 0) {
                 em.close();
 

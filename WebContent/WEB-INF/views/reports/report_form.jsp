@@ -12,7 +12,7 @@
 </c:if>
 <label for="report_date">日付</label><br />
     <p><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></p>
-<br /><br />
+<br/>
 
 <label for="name">氏名</label><br />
     <c:out value="${sessionScope.login_user.name}" />
@@ -126,5 +126,5 @@
     </select>
 <br/><br/>
 
-<input type="hidden" name="_token" value="${_token}" />
+<input  type="hidden" name="_token" value="${_token}" />
 <button class="button" type="submit">投稿</button>

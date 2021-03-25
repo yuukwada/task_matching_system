@@ -17,10 +17,10 @@
                 <tr>
                     <th>タイトル</th>
                     <th>お名前</th>
-                    <th>住所</th>
-                    <th>予算帯</th>
+                    <th class="place">地域</th>
+                    <th class="budget">予算帯</th>
                     <th>関係業種</th>
-                    <th> 操作 </th>
+                    <th class="action"> 操作 </th>
                     <th> 操作 </th>
                     <c:if test="${sessionScope.login_company != null}">
                         <th class="favorite">気になる! </th>
@@ -32,13 +32,13 @@
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${report.title}" /></td>
                         <td><c:out value="${report.user.name}" /></td>
-                        <td><c:out value="${report.user.place_prefecture}" /></td>
-                        <td><c:out value="${report.budget}" /></td>
+                        <td class="place"><c:out value="${report.place_prefecture}" /></td>
+                        <td class="budget"><c:out value="${report.budget}" /></td>
                         <td><c:out value="${report.industry}" /></td>
-                        <td>
+                        <td class="action">
                         <c:choose>
                                 <c:when test="${report.delete_flag == 1}">
-                                        （解決済みです!）
+                                        （解決済み!）
                                 </c:when>
                                 <c:when test="${report.delete_flag == 0}">
                                   <a href="<c:url value='/reports/show?id=${report.id}' />">詳細を表示</a>
@@ -66,7 +66,7 @@
                             <c:if test="${check_flag==1}">
                                 <form method="POST" action="<c:url value="/reports/favorite_destroy"/>">
                                     <input type="hidden" name="report_id"value="${report.id}">
-                                    <button class="antifollow" type="submit">☆解除</button>
+                                    <button class="antifollow" type="submit">解除</button>
                                 </form>
                             </c:if>
                             <c:if test="${check_flag==0}">
