@@ -19,7 +19,7 @@ public class CompaniesValidator {
             errors.add(name_error);
         }
 
-        String email_error=_validateEmail(c.getEmail() , emailDuplicateCheckFlag);
+        String email_error=_validateEmail(c.getEmail(),emailDuplicateCheckFlag);
         if(!email_error.equals("")){
             errors.add(email_error);
         }

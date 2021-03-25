@@ -20,7 +20,7 @@ public class UsersValidator {
             errors.add(name_error);
         }
 
-        String email_error=_validateEmail(u.getEmail() , emailDuplicateCheckFlag);
+        String email_error=_validateEmail(u.getEmail(),emailDuplicateCheckFlag);
         if(!email_error.equals("")){
             errors.add(email_error);
         }

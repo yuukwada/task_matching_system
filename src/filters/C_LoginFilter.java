@@ -61,7 +61,7 @@ public class C_LoginFilter implements Filter {
 
                 }
 
-                if( c != null && u == null ) {
+                if(c != null && u == null) {
 
                     if(!servlet_path.equals("/companies/index") && !servlet_path.equals("/reports/index") &&
                        !servlet_path.equals("/companies/new") && !servlet_path.equals("/companies/show") &&
@@ -79,7 +79,7 @@ public class C_LoginFilter implements Filter {
 
                 }
 
-                if( u != null && c == null ) {
+                if(u != null && c == null) {
 
                     if(!servlet_path.equals("/users/show") && !servlet_path.equals("/users/new") && !servlet_path.equals("/users/destroy") &&
                        !servlet_path.equals("/users/create") && !servlet_path.equals("/users/edit") &&
