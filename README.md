@@ -44,6 +44,8 @@ task_matching_systemは以下の機能を実装しています。
 ![データベース図](https://user-images.githubusercontent.com/77527527/111414214-ec6aeb80-8722-11eb-8f6d-8f1d2e87bbae.png)
 
 
+## Heroku URL
+task-matching-system-tms.herokuapp.com
 
 
 # 使用方法
@@ -56,7 +58,7 @@ task_matching_systemは以下の機能を実装しています。
 
 ![ログイン機能](https://user-images.githubusercontent.com/77527527/111903429-9e891700-8a85-11eb-8b1e-c3696319f82b.mp4)
 
-![気になる!機能](https://user-images.githubusercontent.com/77527527/111906781-aea8f280-8a95-11eb-9929-1ca1a30d1ffe.mp4)
+![気になる!機能](https://user-images.githubusercontent.com/77527527/112443676-93d5c700-8d90-11eb-9a78-e1a6e4aa4638.mp4)
 
 ![コメント機能](https://user-images.githubusercontent.com/77527527/111903463-cc6e5b80-8a85-11eb-9029-a8b3536f2407.mp4)
 
