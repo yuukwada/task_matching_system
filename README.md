@@ -45,7 +45,7 @@ task_matching_systemは以下の機能を実装しています。
 
 
 ## Heroku URL
-task-matching-system-tms.herokuapp.com
+task-matching-system-tms.herokuapp.com/
 
 
 # 使用方法
