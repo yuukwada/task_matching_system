@@ -129,7 +129,7 @@
 <br /><br />
 
 <label for="achieve">実績(複数可)</label><br />
-<input type="text" name="achieve" value="${company.achieve}" />
+<textarea name="achieve" rows="10" cols="50">${company.achieve}</textarea>
 <br /><br />
 
 <label for="password">パスワード</label><br />

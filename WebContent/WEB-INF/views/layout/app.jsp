@@ -14,7 +14,7 @@
             <div id="header">
 
 
-                <h1><a href="<c:url value='/reports/index' />">お悩みマッチングシステム</a></h1>&nbsp;&nbsp;&nbsp;
+                <h3><a href="<c:url value='/reports/index' />">お悩みマッチングシステム</a></h3>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                         <div class="header_menu">
                             <c:out value="${sessionScope.login_user.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

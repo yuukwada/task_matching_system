@@ -39,7 +39,6 @@ public class CompaniesSearchIndexServlet extends HttpServlet {
         int budget;
         budget=Integer.parseInt(request.getParameter("budget"));
 
-
         int page;
         try{
             page = Integer.parseInt(request.getParameter("page"));

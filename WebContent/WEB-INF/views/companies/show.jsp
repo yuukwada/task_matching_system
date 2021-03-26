@@ -47,6 +47,12 @@
                                 <fmt:formatDate value="${company.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
+                        <tr>
+                            <th>実績</th>
+                            <td>
+                                <pre><c:out value="${company.achieve}" /></pre>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 

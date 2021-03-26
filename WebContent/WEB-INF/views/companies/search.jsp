@@ -4,7 +4,7 @@
     <c:param name="content">
         <h2>企業絞り込み</h2>
 
-        <form method="POST" enctype="multipart/form-data" action="<c:url value='/companies/searchindex' />" >
+        <form method="POST" action="<c:url value='/companies/searchindex' />" >
 
             <label for="place_prefecture">所在地(都道府県)</label><br />
             <select name="place_prefecture">
@@ -104,7 +104,6 @@
 
                </select>
                <br /><br />
-
                <input type="hidden" name="_token" value="${_token}" />
                <button class="button" type="submit">検索</button>
         </form>
