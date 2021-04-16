@@ -2,7 +2,7 @@
 「お悩み」は企業、個人に関わらず、大なり小なり誰でも持っているものです。 お悩みを解決できるがニーズを欲しがっている企業と、ニーズを持っているが解決法を欲しがっているお客様。その双方を結び付けるためのツールです。
 
 # 使用技術
-Java(8),MySQL(5.1.45),HTML5,CSS3,Servlet,jstl,Hibernate,JPQL,GitHub,Eclipse
+Java(8),MySQL(5.1.45),HTML5,CSS3,Servlet,JSTL,Hibernate,JPQL,GitHub,Eclipse
 
 # 概要
 task_matching_systemは以下の機能を実装しています。
